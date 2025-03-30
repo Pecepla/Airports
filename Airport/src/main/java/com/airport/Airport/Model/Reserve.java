@@ -16,8 +16,7 @@ public class Reserve {
    private Integer flightCode;
    private Boolean estate;
 
-    @OneToMany(mappedBy = "reseve", cascade = CascadeType.ALL)
-    private List<Passenger> passengers;
+
 
     public Reserve(int reserveCode, Passenger pasenger, Integer flightCode, Boolean estate) {
         this.reserveCode = reserveCode;
