@@ -1,7 +1,7 @@
 package com.airport.Airport.Model;
 
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,30 +14,28 @@ public class Passenger {
 
     private String name;
     private String lastname;
-    private Integer PassportNumber;
-    private String Nationality;
+    private Integer passportNumber; // Fixed naming convention
+    private String nationality; // Fixed naming convention
     private Integer age;
     private String contactNumber;
 
-    @OneToMany(mappedBy = "passengers", cascade = CascadeType.ALL)
-    private List<Reserve> reserve;
+    @OneToMany(mappedBy = "passenger", cascade = CascadeType.ALL)
+    private List<Reserve> reservations; // Added relationship
 
+    public Passenger() {}
 
-    public Passenger(int id, String name, String lastname, Integer passportNumber, String nationality, Integer age, String contactNumber) {
+    public Passenger(int id, String name, String lastname, Integer passportNumber, String nationality, Integer age, String contactNumber, List<Reserve> reservations) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
-        PassportNumber = passportNumber;
-        Nationality = nationality;
+        this.passportNumber = passportNumber;
+        this.nationality = nationality;
         this.age = age;
         this.contactNumber = contactNumber;
+        this.reservations = reservations;
     }
 
-    public Passenger() {
-
-    }
-
-
+    // Getters and setters for all fields (including reservations)
     public int getId() {
         return id;
     }
@@ -63,19 +61,19 @@ public class Passenger {
     }
 
     public Integer getPassportNumber() {
-        return PassportNumber;
+        return passportNumber;
     }
 
     public void setPassportNumber(Integer passportNumber) {
-        PassportNumber = passportNumber;
+        this.passportNumber = passportNumber;
     }
 
     public String getNationality() {
-        return Nationality;
+        return nationality;
     }
 
     public void setNationality(String nationality) {
-        Nationality = nationality;
+        this.nationality = nationality;
     }
 
     public Integer getAge() {
@@ -94,16 +92,31 @@ public class Passenger {
         this.contactNumber = contactNumber;
     }
 
+    public List<Reserve> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reserve> reservations) {
+        this.reservations = reservations;
+    }
+
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Passenger passenger = (Passenger) o;
-        return id == passenger.id && Objects.equals(name, passenger.name) && Objects.equals(lastname, passenger.lastname) && Objects.equals(PassportNumber, passenger.PassportNumber) && Objects.equals(Nationality, passenger.Nationality) && Objects.equals(age, passenger.age) && Objects.equals(contactNumber, passenger.contactNumber);
+        return id == passenger.id &&
+                Objects.equals(name, passenger.name) &&
+                Objects.equals(lastname, passenger.lastname) &&
+                Objects.equals(passportNumber, passenger.passportNumber) &&
+                Objects.equals(nationality, passenger.nationality) &&
+                Objects.equals(age, passenger.age) &&
+                Objects.equals(contactNumber, passenger.contactNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, lastname, PassportNumber, Nationality, age, contactNumber);
+        return Objects.hash(id, name, lastname, passportNumber, nationality, age, contactNumber);
     }
 
     @Override
@@ -112,8 +125,8 @@ public class Passenger {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", PassportNumber=" + PassportNumber +
-                ", Nationality='" + Nationality + '\'' +
+                ", passportNumber=" + passportNumber +
+                ", nationality='" + nationality + '\'' +
                 ", age=" + age +
                 ", contactNumber='" + contactNumber + '\'' +
                 '}';

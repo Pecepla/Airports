@@ -1,8 +1,7 @@
 package com.airport.Airport.Model;
 
-import jakarta.persistence.*;
 
-import java.util.List;
+import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -12,23 +11,26 @@ public class Reserve {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int reserveCode;
 
-   private Passenger passenger;
-   private Integer flightCode;
-   private Boolean estate;
+    @ManyToOne
+    @JoinColumn(name = "passenger_id") // Foreign key column for Passenger
+    private Passenger passenger;
 
+    @ManyToOne
+    @JoinColumn(name = "flight_id") // Foreign key column for Flight
+    private Flight flight; // Changed to reference Flight entity directly
 
+    private Boolean estate;
 
-    public Reserve(int reserveCode, Passenger pasenger, Integer flightCode, Boolean estate) {
+    public Reserve() {}
+
+    public Reserve(int reserveCode, Passenger passenger, Flight flight, Boolean estate) {
         this.reserveCode = reserveCode;
-        this.passenger = pasenger;
-        this.flightCode = flightCode;
+        this.passenger = passenger;
+        this.flight = flight; // Updated relationship with Flight entity
         this.estate = estate;
     }
 
-    public Reserve() {
-
-    }
-
+    // Getters and setters for all fields
     public int getReserveCode() {
         return reserveCode;
     }
@@ -41,16 +43,16 @@ public class Reserve {
         return passenger;
     }
 
-    public void setPasenger(Passenger passenger) {
+    public void setPassenger(Passenger passenger) {
         this.passenger = passenger;
     }
 
-    public Integer getFlightCode() {
-        return flightCode;
+    public Flight getFlight() {
+        return flight; // Updated getter for Flight entity
     }
 
-    public void setFlightCode(Integer flightCode) {
-        this.flightCode = flightCode;
+    public void setFlight(Flight flight) { // Updated setter for Flight entity
+        this.flight = flight;
     }
 
     public Boolean getEstate() {
@@ -62,24 +64,28 @@ public class Reserve {
     }
 
     @Override
-    public String toString() {
-        return "Reserve{" +
-                "reserveCode=" + reserveCode +
-                ", passenger=" + passenger +
-                ", flightCode=" + flightCode +
-                ", estate=" + estate +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Reserve reserve = (Reserve) o;
-        return reserveCode == reserve.reserveCode && Objects.equals(passenger, reserve.passenger) && Objects.equals(flightCode, reserve.flightCode) && Objects.equals(estate, reserve.estate);
+        return reserveCode == reserve.reserveCode &&
+                Objects.equals(passenger, reserve.passenger) &&
+                Objects.equals(flight, reserve.flight) && // Updated equality check for Flight entity
+                Objects.equals(estate, reserve.estate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(reserveCode, passenger, flightCode, estate);
+        return Objects.hash(reserveCode, passenger, flight, estate); // Updated hash code for Flight entity
+    }
+
+    @Override
+    public String toString() {
+        return "Reserve{" +
+                "reserveCode=" + reserveCode +
+                ", passenger=" + passenger +
+                ", flight=" + flight + // Updated to include Flight entity in toString()
+                ", estate=" + estate +
+                '}';
     }
 }
