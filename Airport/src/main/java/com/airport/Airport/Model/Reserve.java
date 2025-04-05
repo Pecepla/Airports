@@ -9,7 +9,7 @@ public class Reserve {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int reserveCode;
+    private Long reserveCode;
 
     @ManyToOne
     @JoinColumn(name = "passenger_id") // Foreign key column for Passenger
@@ -23,7 +23,7 @@ public class Reserve {
 
     public Reserve() {}
 
-    public Reserve(int reserveCode, Passenger passenger, Flight flight, Boolean estate) {
+    public Reserve(Long reserveCode, Passenger passenger, Flight flight, Boolean estate) {
         this.reserveCode = reserveCode;
         this.passenger = passenger;
         this.flight = flight; // Updated relationship with Flight entity
@@ -31,11 +31,11 @@ public class Reserve {
     }
 
     // Getters and setters for all fields
-    public int getReserveCode() {
+    public Long getReserveCode() {
         return reserveCode;
     }
 
-    public void setReserveCode(int reserveCode) {
+    public void setReserveCode(Long reserveCode) {
         this.reserveCode = reserveCode;
     }
 
