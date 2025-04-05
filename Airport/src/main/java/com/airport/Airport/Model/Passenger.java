@@ -10,7 +10,7 @@ public class Passenger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
     private String lastname;
@@ -24,7 +24,7 @@ public class Passenger {
 
     public Passenger() {}
 
-    public Passenger(int id, String name, String lastname, Integer passportNumber, String nationality, Integer age, String contactNumber, List<Reserve> reservations) {
+    public Passenger(Long id, String name, String lastname, Integer passportNumber, String nationality, Integer age, String contactNumber, List<Reserve> reservations) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
@@ -36,11 +36,11 @@ public class Passenger {
     }
 
     // Getters and setters for all fields (including reservations)
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

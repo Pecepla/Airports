@@ -1,4 +1,50 @@
 package com.airport.Airport.Controller;
 
-public class PassengerController {
+import com.airport.Airport.Model.Passenger;
+import com.airport.Airport.Service.PassengerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+
+@RestController
+@RequestMapping("/api/passenger")
+public class PassengerController{
+
+    @Autowired
+    private PassengerService passengerService;
+
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Passenger> getPassengerById(@PathVariable Long id) {
+        return passengerService.getPassengerById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+
+    @PostMapping
+    public Passenger createPassenger(@RequestBody Passenger passenger) {
+        return passengerService.createPassenger(passenger);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Passenger> updatePassenger(@PathVariable Long id, @RequestBody Passenger passenger) {
+        return passengerService.getPassengerById(id)
+                .map(existingPassenger -> {
+                   passenger.setId(id);
+                    return ResponseEntity.ok(passengerService.createPassenger(passenger));
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePassenger(@PathVariable Long id) {
+        return passengerService.getPassengerById(id)
+                .map(passenger -> {
+                   passengerService.deletePassenger(id);
+                    return ResponseEntity.ok().<Void>build();
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
 }
