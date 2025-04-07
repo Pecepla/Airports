@@ -21,7 +21,7 @@ public class Flight {
     private LocalDate departureTure;
     private LocalDate arrivalTime;
     private String status;
-//
+
     @ManyToOne
     @JoinColumn(name = "departure_airport_id")
     private Airport departureAirport;

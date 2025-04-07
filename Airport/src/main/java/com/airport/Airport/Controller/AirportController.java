@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/airport")
@@ -15,6 +17,10 @@ public class AirportController {
     @Autowired
     private AirportService airportService;
 
+    @GetMapping
+    public List<Airport>getAll() {
+        return airportService.getAllAirports();
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Airport> getAirportById(@PathVariable Long id) {
