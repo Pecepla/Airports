@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/planes")
+@CrossOrigin(origins="*")
 public class PlaneController {
 
     @Autowired
