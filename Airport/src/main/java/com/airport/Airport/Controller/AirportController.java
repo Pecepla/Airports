@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/airport")
+@CrossOrigin(origins="*")
 public class AirportController {
 
 
@@ -18,7 +19,7 @@ public class AirportController {
     private AirportService airportService;
 
     @GetMapping
-    public List<Airport>getAll() {
+    public List<Airport> getAllAirports() {
         return airportService.getAllAirports();
     }
 
