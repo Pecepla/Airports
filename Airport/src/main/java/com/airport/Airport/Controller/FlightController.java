@@ -1,10 +1,13 @@
 package com.airport.Airport.Controller;
 
+import com.airport.Airport.Model.Airport;
 import com.airport.Airport.Model.Flight;
 import com.airport.Airport.Service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/flight")
@@ -13,6 +16,10 @@ public class FlightController {
     @Autowired
     private FlightService flightService;
 
+    @GetMapping
+    public List<Flight> getAll() {
+        return flightService.getAllFlight();
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Flight> getFlightById(@PathVariable Long id) {

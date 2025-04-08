@@ -1,11 +1,13 @@
 package com.airport.Airport.Controller;
 
+import com.airport.Airport.Model.Airport;
 import com.airport.Airport.Model.Plane;
 import com.airport.Airport.Service.PlaneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RestController
@@ -14,6 +16,10 @@ public class PlaneController {
 
     @Autowired
     private PlaneService planeService;
+    @GetMapping
+    public List<Plane> getAll() {
+        return planeService.getAllPlane();
+    }
 
 
     @GetMapping("/{id}")

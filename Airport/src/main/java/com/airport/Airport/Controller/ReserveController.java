@@ -1,11 +1,14 @@
 package com.airport.Airport.Controller;
 
 
+import com.airport.Airport.Model.Airport;
 import com.airport.Airport.Model.Reserve;
 import com.airport.Airport.Service.ReserveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/reserve")
@@ -14,6 +17,11 @@ public class ReserveController {
 
     @Autowired
     private ReserveService reserveService;
+
+    @GetMapping
+    public List<Reserve> getAll() {
+        return reserveService.getAllReserve();
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Reserve> getReserveById(@PathVariable Long id) {
