@@ -18,7 +18,6 @@ public class AirportController {
     @Autowired
     private AirportService airportService;
 
-
     @GetMapping
     public List<Airport> getAllAirports() {
         return airportService.getAllAirports();
