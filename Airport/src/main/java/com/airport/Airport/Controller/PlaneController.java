@@ -12,10 +12,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/planes")
+@CrossOrigin( origins="*" )
 public class PlaneController {
 
     @Autowired
     private PlaneService planeService;
+
     @GetMapping
     public List<Plane> getAll() {
         return planeService.getAllPlane();
