@@ -1,0 +1,562 @@
+2025-04-08 13:48:17.947227+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "REGISTRATIONNUMBER" no encontrada
+Column "REGISTRATIONNUMBER" not found; SQL statement:
+INSERT INTO PLANE (model, manufacture, registrationNumber, capacity, yearOfManufacture)
+VALUES 
+('Model A', 'Manufacturer X', 'REG001', 100, 2010),
+('Model B', 'Manufacturer Y', 'REG002', 120, 2011),
+('Model C', 'Manufacturer Z', 'REG003', 150, 2012),
+('Model D', 'Manufacturer X', 'REG004', 200, 2013),
+('Model E', 'Manufacturer Y', 'REG005', 180, 2014),
+('Model F', 'Manufacturer Z', 'REG006', 220, 2015),
+('Model G', 'Manufacturer X', 'REG007', 250, 2016),
+('Model H', 'Manufacturer Y', 'REG008', 300, 2017),
+('Model I', 'Manufacturer Z', 'REG009', 350, 2018),
+('Model J', 'Manufacturer X', 'REG010', 400, 2019),
+('Model K', 'Manufacturer Y', 'REG011', 450, 2020),
+('Model L', 'Manufacturer Z', 'REG012', 500, 2021),
+('Model M', 'Manufacturer X', 'REG013', 550, 2022),
+('Model N', 'Manufacturer Y', 'REG014', 600, 2023),
+('Model O', 'Manufacturer Z', 'REG015', 650, 2024),
+('Model P', 'Manufacturer X', 'REG016', 700, 2025),
+('Model Q', 'Manufacturer Y', 'REG017', 750, 2026),
+('Model R', 'Manufacturer Z', 'REG018', 800, 2027),
+('Model S', 'Manufacturer X', 'REG019', 850, 2028),
+('Model T', 'Manufacturer Y', 'REG020', 900, 2029),
+('Model U', 'Manufacturer Z', 'REG021', 950, 2030),
+('Model V', 'Manufacturer X', 'REG022', 1000, 2031),
+('Model W', 'Manufacturer Y', 'REG023', 1050, 2032),
+('Model X1','Manufacturer Z','REG024' ,1100 ,2033 ),
+('Model X2','Manufacturer X','REG025' ,1150 ,2034 ),
+-- Continúa con el patrón hasta llegar a los registros restantes
+ ('Modelo AA','Fabricante P','Reg050' ,800 ,2005) [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:786)
+	at org.h2.command.Parser.parseColumn(Parser.java:1171)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1156)
+	at org.h2.command.Parser.parseInsert(Parser.java:1530)
+	at org.h2.command.Parser.parsePrepared(Parser.java:698)
+	at org.h2.command.Parser.parse(Parser.java:581)
+	at org.h2.command.Parser.parse(Parser.java:556)
+	at org.h2.command.Parser.prepareCommand(Parser.java:484)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-04-08 13:51:31.792843+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "REGISTRATIONNUMBER" no encontrada
+Column "REGISTRATIONNUMBER" not found; SQL statement:
+INSERT INTO plane (id, model, manufacture, registrationNumber, capacity, yearOfManufacture)
+VALUES 
+(1, 'Model A', 'Manufacturer X', 'REG001', 100, 2010),
+(2, 'Model B', 'Manufacturer Y', 'REG002', 120, 2011),
+(3, 'Model C', 'Manufacturer Z', 'REG003', 150, 2012),
+(4, 'Model D', 'Manufacturer X', 'REG004', 200, 2013),
+(5, 'Model E', 'Manufacturer Y', 'REG005', 180, 2014),
+(6, 'Model F', 'Manufacturer Z', 'REG006', 220, 2015),
+(7, 'Model G', 'Manufacturer X', 'REG007', 250, 2016),
+(8, 'Model H', 'Manufacturer Y', 'REG008', 300, 2017),
+(9, 'Model I', 'Manufacturer Z', 'REG009', 350, 2018),
+(10, 'Model J', 'Manufacturer X', 'REG010', 400, 2019),
+(11, 'Model K', 'Manufacturer Y', 'REG011', 450, 2020),
+(12, 'Model L', 'Manufacturer Z', 'REG012', 500, 2021),
+(13, 'Model M', 'Manufacturer X', 'REG013', 550, 2022),
+(14, 'Model N', 'Manufacturer Y', 'REG014', 600, 2023),
+(15, 'Model O', 'Manufacturer Z', 'REG015', 650, 2024),
+(16, 'Model P', 'Manufacturer X', 'REG016', 700, 2025),
+(17, 'Model Q', 'Manufacturer Y', 'REG017', 750, 2026),
+(18, 'Model R', 'Manufacturer Z', 'REG018', 800, 2027),
+(19, 'Model S', 'Manufacturer X', 'REG019', 850, 2028),
+(20, 'Model T', 'Manufacturer Y', 'REG020', 900, 2029),
+(21, 'Model U', 'Manufacturer Z', 'REG021', 950, 2030),
+(22, 'Model V', 'Manufacturer X', 'REG022', 1000, 2031),
+(23, 'Model W1','Manufacturer Y','REG023' ,1050 ,2032 ),
+(24,'Modelo AA','Fabricante P','Reg024' ,800 ,2005) [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:786)
+	at org.h2.command.Parser.parseColumn(Parser.java:1171)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1156)
+	at org.h2.command.Parser.parseInsert(Parser.java:1530)
+	at org.h2.command.Parser.parsePrepared(Parser.java:698)
+	at org.h2.command.Parser.parse(Parser.java:581)
+	at org.h2.command.Parser.parse(Parser.java:556)
+	at org.h2.command.Parser.prepareCommand(Parser.java:484)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-04-08 13:51:49.198371+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "REGISTRATIONNUMBER" no encontrada
+Column "REGISTRATIONNUMBER" not found; SQL statement:
+INSERT INTO plane (id, model, manufacture, registrationNumber, capacity, yearOfManufacture)
+VALUES 
+(1, 'Model A', 'Manufacturer X', 'REG001', 100, 2010),
+(2, 'Model B', 'Manufacturer Y', 'REG002', 120, 2011),
+(3, 'Model C', 'Manufacturer Z', 'REG003', 150, 2012),
+(4, 'Model D', 'Manufacturer X', 'REG004', 200, 2013),
+(5, 'Model E', 'Manufacturer Y', 'REG005', 180, 2014),
+(6, 'Model F', 'Manufacturer Z', 'REG006', 220, 2015),
+(7, 'Model G', 'Manufacturer X', 'REG007', 250, 2016),
+(8, 'Model H', 'Manufacturer Y', 'REG008', 300, 2017),
+(9, 'Model I', 'Manufacturer Z', 'REG009', 350, 2018),
+(10, 'Model J', 'Manufacturer X', 'REG010', 400, 2019),
+(11, 'Model K', 'Manufacturer Y', 'REG011', 450, 2020),
+(12, 'Model L', 'Manufacturer Z', 'REG012', 500, 2021),
+(13, 'Model M', 'Manufacturer X', 'REG013', 550, 2022),
+(14, 'Model N', 'Manufacturer Y', 'REG014', 600, 2023),
+(15, 'Model O', 'Manufacturer Z', 'REG015', 650, 2024),
+(16, 'Model P', 'Manufacturer X', 'REG016', 700, 2025),
+(17, 'Model Q', 'Manufacturer Y', 'REG017', 750, 2026),
+(18, 'Model R', 'Manufacturer Z', 'REG018', 800, 2027),
+(19, 'Model S', 'Manufacturer X', 'REG019', 850, 2028),
+(20, 'Model T', 'Manufacturer Y', 'REG020', 900, 2029),
+(21, 'Model U', 'Manufacturer Z', 'REG021', 950, 2030),
+(22, 'Model V', 'Manufacturer X', 'REG022', 1000, 2031),
+(23, 'Model W1','Manufacturer Y','REG023' ,1050 ,2032 ),
+(24,'Modelo AA','Fabricante P','Reg024' ,800 ,2005) [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:786)
+	at org.h2.command.Parser.parseColumn(Parser.java:1171)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1156)
+	at org.h2.command.Parser.parseInsert(Parser.java:1530)
+	at org.h2.command.Parser.parsePrepared(Parser.java:698)
+	at org.h2.command.Parser.parse(Parser.java:581)
+	at org.h2.command.Parser.parse(Parser.java:556)
+	at org.h2.command.Parser.prepareCommand(Parser.java:484)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-04-08 13:52:06.192751+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "REGISTRATIONNUMBER" no encontrada
+Column "REGISTRATIONNUMBER" not found; SQL statement:
+INSERT INTO plane (id, model, manufacture, registrationNumber, capacity, yearOfManufacture)
+VALUES 
+(1, 'Model A', 'Manufacturer X', 'REG001', 100, 2010),
+(2, 'Model B', 'Manufacturer Y', 'REG002', 120, 2011),
+(3, 'Model C', 'Manufacturer Z', 'REG003', 150, 2012),
+(4, 'Model D', 'Manufacturer X', 'REG004', 200, 2013),
+(5, 'Model E', 'Manufacturer Y', 'REG005', 180, 2014),
+(6, 'Model F', 'Manufacturer Z', 'REG006', 220, 2015),
+(7, 'Model G', 'Manufacturer X', 'REG007', 250, 2016),
+(8, 'Model H', 'Manufacturer Y', 'REG008', 300, 2017),
+(9, 'Model I', 'Manufacturer Z', 'REG009', 350, 2018),
+(10, 'Model J', 'Manufacturer X', 'REG010', 400, 2019),
+(11, 'Model K', 'Manufacturer Y', 'REG011', 450, 2020),
+(12, 'Model L', 'Manufacturer Z', 'REG012', 500, 2021),
+(13, 'Model M', 'Manufacturer X', 'REG013', 550, 2022),
+(14, 'Model N', 'Manufacturer Y', 'REG014', 600, 2023),
+(15, 'Model O', 'Manufacturer Z', 'REG015', 650, 2024),
+(16, 'Model P', 'Manufacturer X', 'REG016', 700, 2025),
+(17, 'Model Q', 'Manufacturer Y', 'REG017', 750, 2026),
+(18, 'Model R', 'Manufacturer Z', 'REG018', 800, 2027),
+(19, 'Model S', 'Manufacturer X', 'REG019', 850, 2028),
+(20, 'Model T', 'Manufacturer Y', 'REG020', 900, 2029),
+(21, 'Model U', 'Manufacturer Z', 'REG021', 950, 2030),
+(22, 'Model V', 'Manufacturer X', 'REG022', 1000, 2031),
+(23, 'Model W1','Manufacturer Y','REG023' ,1050 ,2032 ) [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:786)
+	at org.h2.command.Parser.parseColumn(Parser.java:1171)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1156)
+	at org.h2.command.Parser.parseInsert(Parser.java:1530)
+	at org.h2.command.Parser.parsePrepared(Parser.java:698)
+	at org.h2.command.Parser.parse(Parser.java:581)
+	at org.h2.command.Parser.parse(Parser.java:556)
+	at org.h2.command.Parser.prepareCommand(Parser.java:484)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-04-08 13:52:22.747293+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]PLANE"; se esperaba "PREPARE"
+Syntax error in SQL statement "[*]PLANE"; expected "PREPARE"; SQL statement:
+PLANE [42001-232]
+2025-04-08 13:54:05.312206+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM PLANE \000d\000a INSERT INTO plane (id, model, manufacture, registrationNumber, capacity, yearOfManufacture)\000d\000aVALUES \000d\000a(1, 100, 2010 'Model REG001', A',  'Manufacturer [*]X',  );"
+Syntax error in SQL statement "SELECT * FROM PLANE \000d\000a INSERT INTO plane (id, model, manufacture, registrationNumber, capacity, yearOfManufacture)\000d\000aVALUES \000d\000a(1, 100, 2010 'Model REG001', A',  'Manufacturer [*]X',  );"; SQL statement:
+SELECT * FROM PLANE 
+ INSERT INTO plane (id, model, manufacture, registrationNumber, capacity, yearOfManufacture)
+VALUES 
+(1, 100, 2010 'Model REG001', A',  'Manufacturer X',  ); [42000-232]
+2025-04-08 13:54:35.468849+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]PLANE"; se esperaba "PREPARE"
+Syntax error in SQL statement "[*]PLANE"; expected "PREPARE"; SQL statement:
+PLANE [42001-232]
+2025-04-10 08:28:44.784805+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM PLANE INSERT [*]INTO plane (capacity, yearOfManufacture, id, manufacture, model, registrationNumber)\000d\000aVALUES \000d\000a(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),\000d\000a(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),\000d\000a(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),\000d\000a(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),\000d\000a(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),\000d\000a(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),\000d\000a(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),\000d\000a(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),\000d\000a(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),\000d\000a(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),\000d\000a(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),\000d\000a(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),\000d\000a(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),\000d\000a(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),\000d\000a(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),\000d\000a(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),\000d\000a(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),\000d\000a(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),\000d\000a(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),\000d\000a(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),\000d\000a(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'),\000d\000a(1000, 2031, 22, 'Manufacturer X', 'Model V1','REG022')"
+Syntax error in SQL statement "SELECT * FROM PLANE INSERT [*]INTO plane (capacity, yearOfManufacture, id, manufacture, model, registrationNumber)\000d\000aVALUES \000d\000a(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),\000d\000a(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),\000d\000a(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),\000d\000a(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),\000d\000a(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),\000d\000a(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),\000d\000a(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),\000d\000a(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),\000d\000a(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),\000d\000a(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),\000d\000a(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),\000d\000a(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),\000d\000a(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),\000d\000a(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),\000d\000a(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),\000d\000a(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),\000d\000a(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),\000d\000a(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),\000d\000a(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),\000d\000a(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),\000d\000a(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'),\000d\000a(1000, 2031, 22, 'Manufacturer X', 'Model V1','REG022')"; SQL statement:
+SELECT * FROM PLANE INSERT INTO plane (capacity, yearOfManufacture, id, manufacture, model, registrationNumber)
+VALUES 
+(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),
+(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),
+(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),
+(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),
+(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),
+(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),
+(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),
+(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),
+(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),
+(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),
+(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),
+(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),
+(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),
+(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),
+(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),
+(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),
+(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),
+(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),
+(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),
+(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),
+(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'),
+(1000, 2031, 22, 'Manufacturer X', 'Model V1','REG022') [42000-232]
+2025-04-10 08:29:51.982005+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM PLANE INSERT [*]INTO plane (capacity, year_of_Manufacture, id, manufacture, model, registration_Number)\000d\000aVALUES \000d\000a(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),\000d\000a(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),\000d\000a(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),\000d\000a(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),\000d\000a(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),\000d\000a(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),\000d\000a(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),\000d\000a(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),\000d\000a(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),\000d\000a(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),\000d\000a(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),\000d\000a(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),\000d\000a(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),\000d\000a(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),\000d\000a(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),\000d\000a(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),\000d\000a(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),\000d\000a(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),\000d\000a(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),\000d\000a(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),\000d\000a(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'),\000d\000a(1000, 2031, 22, 'Manufacturer X', 'Model V1','REG022')"
+Syntax error in SQL statement "SELECT * FROM PLANE INSERT [*]INTO plane (capacity, year_of_Manufacture, id, manufacture, model, registration_Number)\000d\000aVALUES \000d\000a(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),\000d\000a(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),\000d\000a(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),\000d\000a(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),\000d\000a(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),\000d\000a(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),\000d\000a(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),\000d\000a(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),\000d\000a(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),\000d\000a(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),\000d\000a(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),\000d\000a(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),\000d\000a(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),\000d\000a(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),\000d\000a(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),\000d\000a(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),\000d\000a(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),\000d\000a(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),\000d\000a(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),\000d\000a(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),\000d\000a(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'),\000d\000a(1000, 2031, 22, 'Manufacturer X', 'Model V1','REG022')"; SQL statement:
+SELECT * FROM PLANE INSERT INTO plane (capacity, year_of_Manufacture, id, manufacture, model, registration_Number)
+VALUES 
+(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),
+(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),
+(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),
+(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),
+(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),
+(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),
+(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),
+(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),
+(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),
+(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),
+(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),
+(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),
+(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),
+(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),
+(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),
+(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),
+(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),
+(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),
+(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),
+(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),
+(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'),
+(1000, 2031, 22, 'Manufacturer X', 'Model V1','REG022') [42000-232]
+2025-04-10 08:30:03.090926+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM PLANE INSERT [*]INTO plane (capacity, year_of_Manufacture, id, manufacture, model, registration_Number)\000d\000aVALUES \000d\000a(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),\000d\000a(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),\000d\000a(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),\000d\000a(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),\000d\000a(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),\000d\000a(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),\000d\000a(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),\000d\000a(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),\000d\000a(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),\000d\000a(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),\000d\000a(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),\000d\000a(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),\000d\000a(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),\000d\000a(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),\000d\000a(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),\000d\000a(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),\000d\000a(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),\000d\000a(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),\000d\000a(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),\000d\000a(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),\000d\000a(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'),"
+Syntax error in SQL statement "SELECT * FROM PLANE INSERT [*]INTO plane (capacity, year_of_Manufacture, id, manufacture, model, registration_Number)\000d\000aVALUES \000d\000a(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),\000d\000a(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),\000d\000a(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),\000d\000a(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),\000d\000a(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),\000d\000a(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),\000d\000a(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),\000d\000a(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),\000d\000a(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),\000d\000a(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),\000d\000a(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),\000d\000a(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),\000d\000a(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),\000d\000a(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),\000d\000a(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),\000d\000a(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),\000d\000a(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),\000d\000a(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),\000d\000a(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),\000d\000a(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),\000d\000a(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'),"; SQL statement:
+SELECT * FROM PLANE INSERT INTO plane (capacity, year_of_Manufacture, id, manufacture, model, registration_Number)
+VALUES 
+(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),
+(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),
+(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),
+(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),
+(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),
+(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),
+(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),
+(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),
+(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),
+(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),
+(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),
+(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),
+(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),
+(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),
+(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),
+(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),
+(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),
+(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),
+(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),
+(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),
+(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'), [42000-232]
+2025-04-10 08:30:27.219735+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]NSERT INTO plane (capacity, year_of_Manufacture, id, manufacture, model, registration_Number)\000d\000aVALUES \000d\000a(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),\000d\000a(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),\000d\000a(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),\000d\000a(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),\000d\000a(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),\000d\000a(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),\000d\000a(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),\000d\000a(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),\000d\000a(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),\000d\000a(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),\000d\000a(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),\000d\000a(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),\000d\000a(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),\000d\000a(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),\000d\000a(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),\000d\000a(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),\000d\000a(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),\000d\000a(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),\000d\000a(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),\000d\000a(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),\000d\000a(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021')"
+Syntax error in SQL statement "[*]NSERT INTO plane (capacity, year_of_Manufacture, id, manufacture, model, registration_Number)\000d\000aVALUES \000d\000a(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),\000d\000a(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),\000d\000a(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),\000d\000a(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),\000d\000a(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),\000d\000a(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),\000d\000a(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),\000d\000a(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),\000d\000a(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),\000d\000a(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),\000d\000a(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),\000d\000a(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),\000d\000a(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),\000d\000a(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),\000d\000a(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),\000d\000a(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),\000d\000a(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),\000d\000a(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),\000d\000a(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),\000d\000a(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),\000d\000a(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021')"; SQL statement:
+NSERT INTO plane (capacity, year_of_Manufacture, id, manufacture, model, registration_Number)
+VALUES 
+(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),
+(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),
+(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),
+(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),
+(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),
+(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),
+(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),
+(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),
+(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),
+(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),
+(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),
+(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),
+(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),
+(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),
+(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),
+(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),
+(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),
+(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),
+(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),
+(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),
+(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021') [42000-232]
+2025-04-10 08:31:16.709819+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "YEAROFMANUFACTURE" no encontrada
+Column "YEAROFMANUFACTURE" not found; SQL statement:
+INSERT INTO plane (capacity, yearOfManufacture, id, manufacture, model, registrationNumber)
+VALUES 
+(100, 2010, 1, 'Manufacturer X', 'Model A', 'REG001'),
+(120, 2011, 2, 'Manufacturer Y', 'Model B', 'REG002'),
+(150, 2012, 3, 'Manufacturer Z', 'Model C', 'REG003'),
+(200, 2013, 4, 'Manufacturer X', 'Model D', 'REG004'),
+(180, 2014, 5, 'Manufacturer Y', 'Model E', 'REG005'),
+(220, 2015, 6, 'Manufacturer Z', 'Model F', 'REG006'),
+(250, 2016, 7, 'Manufacturer X', 'Model G', 'REG007'),
+(300, 2017, 8, 'Manufacturer Y', 'Model H', 'REG008'),
+(350, 2018, 9, 'Manufacturer Z', 'Model I', 'REG009'),
+(400, 2019, 10, 'Manufacturer X', 'Model J', 'REG010'),
+(450, 2020, 11, 'Manufacturer Y', 'Model K', 'REG011'),
+(500, 2021, 12, 'Manufacturer Z', 'Model L', 'REG012'),
+(550, 2022, 13, 'Manufacturer X', 'Model M', 'REG013'),
+(600, 2023, 14, 'Manufacturer Y', 'Model N', 'REG014'),
+(650, 2024, 15, 'Manufacturer Z', 'Model O', 'REG015'),
+(700, 2025, 16, 'Manufacturer X', 'Model P', 'REG016'),
+(750, 2026, 17, 'Manufacturer Y', 'Model Q', 'REG017'),
+(800, 2027, 18, 'Manufacturer Z', 'Model R', 'REG018'),
+(850, 2028, 19, 'Manufacturer X', 'Model S', 'REG019'),
+(900, 2029, 20, 'Manufacturer Y', 'Model T', 'REG020'),
+(950, 2030, 21, 'Manufacturer Z', 'Model U', 'REG021'),
+(1000, 2031, 22, 'Manufacturer X', 'Model V1','REG022'),
+(1050 ,2032 ,23,'Fabricante P','Modelo AA','Reg023') [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:786)
+	at org.h2.command.Parser.parseColumn(Parser.java:1171)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1156)
+	at org.h2.command.Parser.parseInsert(Parser.java:1530)
+	at org.h2.command.Parser.parsePrepared(Parser.java:698)
+	at org.h2.command.Parser.parse(Parser.java:581)
+	at org.h2.command.Parser.parse(Parser.java:556)
+	at org.h2.command.Parser.prepareCommand(Parser.java:484)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
