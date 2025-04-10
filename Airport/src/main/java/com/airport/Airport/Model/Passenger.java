@@ -1,7 +1,10 @@
 package com.airport.Airport.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,17 +17,18 @@ public class Passenger {
 
     private String name;
     private String lastname;
-    private Integer passportNumber; // Fixed naming convention
+    private String passportNumber; // Fixed naming convention
     private String nationality; // Fixed naming convention
-    private Integer age;
+    private Date age;
     private String contactNumber;
 
     @OneToMany(mappedBy = "passenger", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Reserve> reservations; // Added relationship
 
     public Passenger() {}
 
-    public Passenger(Long id, String name, String lastname, Integer passportNumber, String nationality, Integer age, String contactNumber, List<Reserve> reservations) {
+    public Passenger(Long id, String name, String lastname, String passportNumber, String nationality, Date age, String contactNumber, List<Reserve> reservations) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
@@ -60,11 +64,11 @@ public class Passenger {
         this.lastname = lastname;
     }
 
-    public Integer getPassportNumber() {
+    public String getPassportNumber() {
         return passportNumber;
     }
 
-    public void setPassportNumber(Integer passportNumber) {
+    public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
     }
 
@@ -76,11 +80,11 @@ public class Passenger {
         this.nationality = nationality;
     }
 
-    public Integer getAge() {
+    public Date getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(Date age) {
         this.age = age;
     }
 
