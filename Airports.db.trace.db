@@ -560,3 +560,176 @@ VALUES
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-04-10 13:37:19.895832+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "DEPARTURE_TIME" no encontrada
+Column "DEPARTURE_TIME" not found; SQL statement:
+INSERT INTO FLIGHT (ID, ARRIVAL_TIME, DEPARTURE_TIME, ARRIVAL_AIRPORT_ID, DEPARTURE_AIRPORT_ID, PLANE_ID, FLIGHT_NUMBER, STATUS)
+VALUES
+(1, '2024-04-10 10:00:00', '2024-04-10 08:00:00', 1, 2, 2, 'FL100', 'Scheduled'),
+(2, '2024-04-10 12:30:00', '2024-04-10 09:45:00', 3, 4, 3, 'FL101', 'Boarding'),
+(3, '2024-04-10 15:15:00', '2024-04-10 11:30:00', 5, 6, 4, 'FL102', 'Delayed'),
+(4, '2024-04-10 18:00:00', '2024-04-10 14:00:00', 7, 8, 5, 'FL103', 'On Time'),
+(5, '2024-04-10 20:45:00', '2024-04-10 16:20:00', 9, 10, 6, 'FL104', 'Cancelled'),
+(6, '2024-04-10 22:30:00', '2024-04-10 18:10:00', 11, 12, 7, 'FL105', 'Scheduled'),
+(7, '2024-04-11 01:00:00', '2024-04-10 19:45:00', 13, 14, 8, 'FL106', 'Boarding'),
+(8, '2024-04-11 03:30:00', '2024-04-10 21:15:00', 15, 16, 9, 'FL107', 'On Time'),
+(9, '2024-04-11 06:00:00', '2024-04-10 23:50:00', 17, 18, 10, 'FL108', 'Delayed'),
+(10, '2024-04-11 08:20:00', '2024-04-11 02:30:00', 19, 20, 11, 'FL109', 'Scheduled'),
+(11, '2024-04-11 11:10:00', '2024-04-11 05:00:00', 21, 22, 12, 'FL110', 'On Time'),
+(12, '2024-04-11 13:45:00', '2024-04-11 07:20:00', 23, 24, 13, 'FL111', 'Boarding'),
+(13, '2024-04-11 16:30:00', '2024-04-11 09:45:00', 25, 26, 14, 'FL112', 'Cancelled'),
+(14, '2024-04-11 19:00:00', '2024-04-11 12:10:00', 1, 3, 15, 'FL113', 'Delayed'),
+(15, '2024-04-11 21:30:00', '2024-04-11 14:40:00', 2, 4, 16, 'FL114', 'Scheduled'),
+(16, '2024-04-12 00:15:00', '2024-04-11 17:00:00', 5, 7, 17, 'FL115', 'On Time'),
+(17, '2024-04-12 02:50:00', '2024-04-11 19:30:00', 8, 9, 18, 'FL116', 'Boarding'),
+(18, '2024-04-12 05:25:00', '2024-04-11 22:15:00', 10, 11, 19, 'FL117', 'Scheduled'),
+(19, '2024-04-12 08:00:00', '2024-04-12 01:00:00', 12, 13, 20, 'FL118', 'On Time'),
+(20, '2024-04-12 10:45:00', '2024-04-12 03:30:00', 14, 15, 21, 'FL119', 'Delayed') [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:786)
+	at org.h2.command.Parser.parseColumn(Parser.java:1171)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1156)
+	at org.h2.command.Parser.parseInsert(Parser.java:1530)
+	at org.h2.command.Parser.parsePrepared(Parser.java:698)
+	at org.h2.command.Parser.parse(Parser.java:581)
+	at org.h2.command.Parser.parse(Parser.java:556)
+	at org.h2.command.Parser.prepareCommand(Parser.java:484)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-04-10 13:38:48.715756+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Imposible interpretar la constante "DATE" "2023-10-15 14:00:00"
+Cannot parse "DATE" constant "2023-10-15 14:00:00"; SQL statement:
+INSERT INTO FLIGHT (ID, ARRIVAL_TIME, DEPARTURE_TURE, ARRIVAL_AIRPORT_ID, DEPARTURE_AIRPORT_ID, PLANE_ID, FLIGHT_NUMBER, STATUS)
+VALUES 
+(1, '2023-10-15 14:00:00', '2023-10-15 10:00:00', 1, 2, 2, 'FL101', 'Scheduled'),
+(2, '2023-10-16 15:30:00', '2023-10-16 11:30:00', 3, 4, 3, 'FL102', 'Scheduled'),
+(3, '2023-10-17 16:45:00', '2023-10-17 12:45:00', 5, 6, 4, 'FL103', 'Scheduled'),
+(4, '2023-10-18 17:15:00', '2023-10-18 13:15:00', 7, 8, 5, 'FL104', 'Scheduled'),
+(5, '2023-10-19 18:00:00', '2023-10-19 14:00:00', 9, 10, 6, 'FL105', 'Scheduled'),
+(6, '2023-10-20 19:30:00', '2023-10-20 15:30:00', 11, 12, 7, 'FL106', 'Scheduled'),
+(7, '2023-10-21 20:45:00', '2023-10-21 16:45:00', 13, 14, 8, 'FL107', 'Scheduled'),
+(8, '2023-10-22 21:15:00', '2023-10-22 17:15:00', 15, 16, 9, 'FL108', 'Scheduled'),
+(9, '2023-10-23 22:00:00', '2023-10-23 18:00:00', 17, 18, 10, 'FL109', 'Scheduled'),
+(10, '2023-10-24 23:30:00', '2023-10-24 19:30:00', 19, 20, 11, 'FL110', 'Scheduled'),
+(11, '2023-10-25 08:00:00', '2023-10-25 04:00:00', 21, 22, 12, 'FL111', 'Scheduled'),
+(12, '2023-10-26 09:15:00', '2023-10-26 05:15:00', 23, 24, 13, 'FL112', 'Scheduled'),
+(13, '2023-10-27 10:30:00', '2023-10-27 06:30:00', 25, 26, 14, 'FL113', 'Scheduled'),
+(14, '2023-10-28 11:45:00', '2023-10-28 07:45:00', 1, 3, 15, 'FL114', 'Scheduled'),
+(15, '2023-10-29 12:00:00', '2023-10-29 08:00:00', 2, 4, 16, 'FL115', 'Scheduled'),
+(16, '2023-10-30 13:15:00', '2023-10-30 09:15:00', 5, 7, 17, 'FL116', 'Scheduled'),
+(17, '2023-10-31 14:30:00', '2023-10-31 10:30:00', 6, 8, 18, 'FL117', 'Scheduled'),
+(18, '2023-11-01 15:45:00', '2023-11-01 11:45:00', 9, 11, 19, 'FL118', 'Scheduled'),
+(19, '2023-11-02 16:00:00', '2023-11-02 12:00:00', 10, 12, 20, 'FL119', 'Scheduled'),
+(20, '2023-11-03 17:15:00', '2023-11-03 13:15:00', 13, 15, 21, 'FL120', 'Scheduled') [22007-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:518)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1880)
+	at org.h2.value.Value.convertTo(Value.java:1173)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1118)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:406)
+	at org.h2.table.Table.convertInsertRow(Table.java:963)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:139)
+	at org.h2.command.Command.executeUpdate(Command.java:304)
+	at org.h2.command.Command.executeUpdate(Command.java:248)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.NumberFormatException: 15 14:00:00
+	at org.h2.util.StringUtils.parseUInt31(StringUtils.java:1117)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:192)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 55 more

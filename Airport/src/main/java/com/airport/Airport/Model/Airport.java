@@ -1,6 +1,7 @@
 package com.airport.Airport.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 import java.util.Objects;
@@ -19,9 +20,11 @@ import java.util.Objects;
         private String country;
 
         @OneToMany(mappedBy = "departureAirport", cascade = CascadeType.ALL)
+        @JsonIgnore
         private List<Flight> departingFlights;
 
         @OneToMany(mappedBy = "arrivalAirport", cascade = CascadeType.ALL)
+        @JsonIgnore
         private List<Flight> arrivingFlights;
 
         public Airport() {

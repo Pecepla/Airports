@@ -1,5 +1,6 @@
 package com.airport.Airport.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 import java.util.Objects;
@@ -18,6 +19,7 @@ public class Plane {
     private Integer yearOfManufacture;
 
     @OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Flight> flights;
 
     public Plane() {

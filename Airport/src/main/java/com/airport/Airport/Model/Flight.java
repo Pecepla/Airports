@@ -5,6 +5,7 @@ package com.airport.Airport.Model;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -24,14 +25,17 @@ public class Flight {
 
     @ManyToOne
     @JoinColumn(name = "departure_airport_id")
+    @JsonIgnore
     private Airport departureAirport;
 
     @ManyToOne
     @JoinColumn(name = "arrival_airport_id")
+    @JsonIgnore
     private Airport arrivalAirport;
 
     @ManyToOne
     @JoinColumn(name = "plane_id")
+    @JsonIgnore
     private Plane plane;
 
     public Flight() {
